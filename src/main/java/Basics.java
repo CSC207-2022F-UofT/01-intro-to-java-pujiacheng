@@ -40,10 +40,7 @@ public class Basics {
          */
         System.out.println(7 + 5);
 
-        /* TODO (Task 1): Write a line of code below that prints the string
-         *                Hello World!
-         */
-
+        System.out.println("Hello World!");
 
 
         /* 4. In Python, we could declare variables using a simple assignment
@@ -59,10 +56,8 @@ public class Basics {
          */
 
         /*
-         * TODO (Task 2): Create a variable named my_variable and assign it the
-         *                value 100.
          */
-
+        int my_variable = 100;
 
 
         /* Do not remove the line below: if you did task 2 correctly, then
@@ -88,9 +83,6 @@ public class Basics {
          */
 
         /*
-         * TODO (Task 3): Create a for-loop that loops from 10 to 0, printing
-         *                the following at each iteration:
-         *                Current count: #
          *
          * e.g. the end result should look like:
          * Current count: 10
@@ -99,7 +91,11 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        int count = 10;
+        for (int i = 10; i >= 0; i--) {
+            System.out.println("Current count: " + count);
+            count -= 1;
+        }
 
     }
 
@@ -133,14 +129,13 @@ public class Basics {
      * @return           The first letter of every word in to_split
      */
     public static String split(String to_split) {
-        /* TODO (Task 4): Complete this method body.
-         *                The String methods .split and .charAt may be helpful,
-         *                along with the StringBuilder.append
-         *                You may also assume that to_split always has 7 words
-         *                separated by spaces, so no loops are required, though
-         *                you may use them if you wish.
-         */
+
         StringBuilder ret = new StringBuilder();
+        String[] a = to_split.split(" ", 8);
+        for (String b : a) {
+            ret.append(b.charAt(0));
+        }
+
 
         // Fill in the rest of the body here
 
@@ -163,20 +158,28 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
+        int a = arr.length;
+        if (a == 0) {
+            return 0;
+        }
+        if (a == 1) {
+            return 0;
+        }
+        for (int i = 1; i < a; i+=2) {
+            current_sum += arr[i];
+        }
 
-        /* TODO (Task 5): Complete this method body using a for-loop.
-         *                You can find the length of an array by using the
-         *                .length attribute (e.g. arr.length)
-         *                You can index into arrays as we do in Python
-         *                (e.g. arr[i] gives you the item at index i).
-         */
+
 
         return current_sum;
     }
+    
+
+
 
 
     /*
-     * TODO (Task 6): Submit the changes you made on GitHub!
+     *  Submit the changes you made on GitHub!
      *                When you submit it, go to the 'Actions' tab. You should
      *                be able to see this exercise being autograded!
      *
